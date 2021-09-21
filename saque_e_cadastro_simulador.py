@@ -54,14 +54,14 @@ if hora_fechamento > hora_funcionamento:  # Início
     while not sx in 'FfMm':
         sx = input('Dado inválido. Tente novamente. Sexo [M/F]: ')
 
-        # Criando um nome de usuário.
+    # Criando um nome de usuário.
     new_user = input('Crie um nome de usuário: ').lstrip()
     if new_user.isnumeric() or new_user.isspace() or len(new_user) <= 2 or new_user == name:  # Entra nessa condição
         while True:  # Se o nome de usuário for inválido
             new_user = input('Crie um nome de usuário válido: ')
             if not new_user.isnumeric() and not new_user.isspace() and len(new_user) > 2 and new_user != name:
                 break
-                # Criando uma senha.
+    # Criando uma senha.
     new_password = input('Crie uma senha: ').strip()
     if new_password.isspace() or new_password.isupper() or len(
             new_password) <= 3:  # Entra nesse loop infinito caso a senha esteja inválida.
@@ -86,7 +86,7 @@ if hora_fechamento > hora_funcionamento:  # Início
     for espaços in range(0, 33):
         print('')
 
-        # Tela de Login para acessar o caixa eletrônico virtual
+    # Tela de Login para acessar o caixa eletrônico virtual
     if sx in 'Ff':
         print("==" * 55)
         print(emj(f'{"":>41}:woman: Seja bem vinda, {name}! :woman:', use_aliases=True))
@@ -134,7 +134,7 @@ if hora_fechamento > hora_funcionamento:  # Início
     for espaços in range(0, 33):
         print('')
 
-        # Caixa eletrônico virtual
+    # Caixa eletrônico virtual
     print("==" * 55)
     print(emj(f'{" :moneybag: :bank: CAIXA ELETRÔNICO VIRTUAL":>79} :bank: :moneybag:', use_aliases=True))
     print("==" * 55)

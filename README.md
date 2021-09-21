@@ -1,2 +1,2 @@
 # MiniProjetos
-Apenas peqenos e simples projetos para fins de testes...
+Apenas pequenos e simples projetos para fins de testes

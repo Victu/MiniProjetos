@@ -14,7 +14,7 @@ while True:
     print('Digite "0" - PEDRA\nDigite "1" - PAPEL\nDigite "2" - TESOURA')
     print('=' * 50)
     jogador = int(input(f'- {nome}, selecione um número: '))
-    while jogador < 0 or jogador > 2:
+    while jogador < 0 or jogador > 2:  # Entra nesse loop caso digite um número/opção inválida
         jogador = int(input('- Selecione uma opção válida: '))
     print('- Agora é a vez do PC...')
     sleep(1.5)
@@ -26,15 +26,15 @@ while True:
     print('PÔ!!')
     sleep(1)
     print('-' * 50)
-    print(f'{nome} escolheu: {opções[jogador]}')
+    print(f'{nome} escolheu: {opções[jogador]}')  # Imprime a escolha do jogador
     for o in range(len(opções)):
         if pc == o:
-            print(f'O PC escolheu: {opções[o]}')
+            print(f'O PC escolheu: {opções[o]}')  # Imprime a escolha da máquina
     print('- RESULTADO:', end=' ')
     if jogador == pc:
         print('Empate!')
         print('-' * 50)
-    else:
+    else:  # Essa condição é iniciada quando a escolha do jogador é diferente da máquina
         if jogador == 0 and pc == 2:
             print('Boa! Você venceu.')
             vitória += 1
@@ -57,7 +57,7 @@ while True:
         print(f'{" PLACAR ":-^50}\n{"|PC:":>19} {derrota} x {nome}: {vitória}|')
         print('=' * 50)
     repetir = input('Quer repetir?[s/n] ').strip().lower()[0]
-    while not repetir in 'SsNn':
+    while not repetir in 'SsNn':  # Esse loop é iniciado quando resposta for inválida
         repetir = input('Resposta inválida. Quer repetir?[s/n] ').strip().lower()[0]
     if repetir in 'Nn':
         print('Finalizando...')

@@ -5,7 +5,6 @@ print('=-' * 25)
 print(f'{"> JOKENPÔ <":-^50}')
 print('-=' * 25)
 opções = ('PEDRA', 'PAPEL', 'TESOURA')
-pc = randint(0, 2)
 nome = input('Seu nome/apelido: ').strip().capitalize()
 vitória = derrota = 0
 
@@ -14,6 +13,7 @@ while True:
     print('Digite "0" - PEDRA\nDigite "1" - PAPEL\nDigite "2" - TESOURA')
     print('=' * 50)
     jogador = int(input(f'- {nome}, selecione um número: '))
+    pc = randint(0, 2)
     while jogador < 0 or jogador > 2:  # Entra nesse loop caso digite um número/opção inválida
         jogador = int(input('- Selecione uma opção válida: '))
     print('- Agora é a vez do PC...')

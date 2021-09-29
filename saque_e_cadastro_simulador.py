@@ -42,15 +42,15 @@ if hora_fechamento > hora_funcionamento:  # Início
     print(f'\033[1m{"Crie uma conta para poder ter acesso ao caixa eletrônico virtual":>92}\033[m')
 
     print(f'{">>" + "-" * 80:>100}<<')
-    print(emj(f'\033[31m{":rotating_light: ATENÇÃO!":>75}\033[m', use_aliases=True))
-    print(f'\033[33m{"1) Nome de usuário não pode ser igual seu nome, não pode estar vazio e":>92}\n'
+    print(emj(f'\033[31m{":rotating_light:":>68} \033[1mATENÇÃO!\033[m', use_aliases=True))
+    print(f'\033[31m{"1) Nome de usuário não pode ser igual seu nome, não pode estar vazio e":>92}\n'
           f'{"nem ser numérico":>41}.')
     print(f'{"2) Senha não pode ficar vazia e nem conter caracteres de caixa alta.":>90}')
     print(f'{"3) Nome de usuário tem que ter pelo menos 3 digitos, e senha pelo menos 4.":>96}')
     print(f'{"4) O horário de funcionamento é até às 22hr.":>66}\033[m')
     print(f'{">>" + "-" * 80:>100}<<')
 
-    print('Primeiramente, informe alguns dados.')  # Informações básicas
+    print('\033[1mPreencha os campos abaixo:\033[m')  # Informações básicas
     name = input('Nome: ').lstrip()
     sx = input('Sexo [M/F]: ').strip().lower()[0]
     while not sx in 'FfMm':
@@ -98,7 +98,8 @@ if hora_fechamento > hora_funcionamento:  # Início
     for espaços in range(0, 4):
         print('')
 
-    user = input(emj(':bust_in_silhouette: Informe seu nome de usuário: ', use_aliases=True))
+    print('\033[1;4m- INFORME SEUS DADOS\033[m')
+    user = input(emj(':bust_in_silhouette: Seu nome de usuário: ', use_aliases=True))
     print('Verificando se há problemas...')
     sleep(1)
     while user.isnumeric() or user != new_user:
@@ -139,7 +140,7 @@ if hora_fechamento > hora_funcionamento:  # Início
     print(emj(f'\033[33m{" :moneybag: :bank: CAIXA ELETRÔNICO VIRTUAL":>79} :bank: :moneybag:\033[m', use_aliases=True))
     print("\033[32m==" * 55 + '\033[m')
     cent = randint(10, 99)
-    saldo_disponível = randint(100, 12500)
+    saldo_disponível = randint(100, 20500)
     notas = ('R$100,00', 'R$50,00', 'R$20,00',  # Todas as notas disponíveis
              'R$10,00', 'R$5,00', 'R$1,00')
 
@@ -149,7 +150,7 @@ if hora_fechamento > hora_funcionamento:  # Início
     print(f'\033[1;33m{"Saldo disponível:":>56} R${saldo_disponível},{cent}\033[m')
     print(f'\033[31m{"AVISO: O valor mínimo permitido para saque é 100 reais":>80}\033[m')
     print('==' * 55)
-    print('- CÉDULAS DISPONÍVEIS:')
+    print('- NOTAS DISPONÍVEIS:')
     for x in notas:
         print(emj(f'\033[32m:dollar: {x}\033[m', use_aliases=True))
 

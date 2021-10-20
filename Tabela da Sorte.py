@@ -5,7 +5,7 @@ números = []
 print('=' * 70)
 print(f'<<{" TABELA DA SORTE ":-^66}>>')
 print('=' * 70)
-recompensa = recompensa_atual = sorteado = total_n = 0
+recompensa = total_arrecadado = sorteado = total_n = 0
 rodada = 3
 
 while True:  # Início
@@ -47,10 +47,12 @@ while True:  # Início
     print(f'\033[1;32mParabéns! Seu número da sorte foi encontrado {total_n}x!\n'
           f'De R${recebido:.2f} subiu para +R${recompensa:.2f} ↑\033[m'
           if total_n > 0 else '\033[31m- NENHUM NÚMERO SORTEADO. BOA SORTE NA PRÓXIMA! :(\033[m')
+    total_arrecadado += recompensa
 
     # Finalizando
     if rodada == 0:
         print(f'- RODADAS TERMINADA.')
+        print('=' * 70)
         break
     rept = input(f'Você ainda tem {rodada} rodada(s). Deseja repetir?[s/n] ')[0].strip()
     while rept not in 'SsNn':
@@ -61,6 +63,6 @@ while True:  # Início
     if rept in 'Nn':
         break
 sleep(2.5)
-print(f'\033[1;7;33m {"VALOR TOTAL ARRECADADO:":>40} R${recompensa_atual:.2f}\t\t   '
+print(f'\033[1;7;33m {"VALOR TOTAL ARRECADADO:":>40} R${total_arrecadado:.2f}\t\t   '
       f'           \033[m')
 print('=' * 70)

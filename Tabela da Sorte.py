@@ -33,7 +33,6 @@ while True:  # Início
             else:  # Entra nessa condição, caso o número escolhido pelo usuário esteja na tabela
                 print(f'|\033[1;33m{sorteado:^3}\033[m', end='|')
                 total_n += 1
-        sleep(1)
         print()
     print(f'<<{33 * "-="}>>')
     sleep(2)

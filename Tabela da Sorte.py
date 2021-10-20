@@ -24,7 +24,7 @@ while True:  # Início
         if n in números:
             sorteado = n
         números.clear()
-
+    # Criando a tabela
     print(f'<<{33 * "=-"}>>')
     for cl in range(len(tabela)):  # Colunas
         for ln in range(len(tabela)):  # Linhas

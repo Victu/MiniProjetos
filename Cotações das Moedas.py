@@ -1,9 +1,10 @@
 import requests
 from tkinter import *
 
-window = Tk()  # Inicia o Tkinter
+window = Tk()
 
 def pegar_cotacoes():
+    '''Função que realiza as cotações'''
     requisicao = requests.get("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL")
 
     requisicao_dic = requisicao.json()
@@ -19,7 +20,7 @@ def pegar_cotacoes():
 
     texto_cotacao['text'] = texto
 
-window.title('Cotação Atual das Moedas')  # Título da janela
+window.title('Cotação Atual das Moedas')  
 window.geometry('310x200')  # Tamanho da inicialização da janela
 
 texto_info = Label(window, text='CLIQUE NO BOTÃO PARA ATUALIZAR AS COTAÇÕES.')
@@ -29,4 +30,4 @@ botao.grid(column=0, row=2)  # Posição do botão
 texto_cotacao = Label(window, text='')
 texto_cotacao.grid(column=0, row=5, pady=12, padx=10)  # Posição da informação da cotação
 
-window.mainloop()  # Função para manter a janela aberta
+window.mainloop()
